@@ -1,5 +1,5 @@
 #ifndef FEODOROV_OOP_LW_3
-#define FEODOROV_OOP_LW_23
+#define FEODOROV_OOP_LW_3
 
 #include <string>
 
@@ -12,11 +12,10 @@ private:
 
 public:
     ComplexNum() = default;
-    // Copy
     ComplexNum(double r, double i);
 
     ~ComplexNum() = default;
 };
 
 
-#endif //FEODOROV_OOP_LW_2
+#endif //FEODOROV_OOP_LW_3
