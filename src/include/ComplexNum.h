@@ -2,18 +2,27 @@
 #define FEODOROV_OOP_LW_3
 
 #include <string>
+#include <complex>
 
 using namespace std;
 
 class ComplexNum {
 private:
-    double r;
-    double i;
+    complex<double> num;
 
 public:
+    // Constructors
     ComplexNum() = default;
-    ComplexNum(double r, double i);
+    ComplexNum(double re, double im);
 
+    // Arifmetic
+    // Comparison
+    // To string
+    // From string
+    // To algebraic
+    // To geometric
+
+    // Destructor
     ~ComplexNum() = default;
 };
 
