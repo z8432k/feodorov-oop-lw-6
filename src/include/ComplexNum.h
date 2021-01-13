@@ -17,7 +17,7 @@ private:
 public:
     ComplexNum() = default;
     ComplexNum(double re, double im);
-    ComplexNum(string& str);
+    explicit ComplexNum(string& str);
     ~ComplexNum() = default;
 
     ComplexNum operator + (const ComplexNum&) const;

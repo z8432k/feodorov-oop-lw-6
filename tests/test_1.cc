@@ -36,7 +36,8 @@ int main(int argc, char** argv) {
     assert((cn != cn2) == true);
     cout << "!= OK: " << endl;
 
-    ComplexNum eq(3, 7);
+    string num = "3+7i";
+    ComplexNum eq(num);
     assert((cn == eq) == true);
     cout << "== OK: " << endl;
 
