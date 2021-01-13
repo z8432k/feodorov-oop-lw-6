@@ -8,22 +8,32 @@ using namespace std;
 
 class ComplexNum {
 private:
-    complex<double> num;
+    double re = 0;
+    double im = 0;
+
+    double angle() const;
+    double mod() const;
 
 public:
-    // Constructors
     ComplexNum() = default;
     ComplexNum(double re, double im);
-
-    // Arifmetic
-    // Comparison
-    // To string
-    // From string
-    // To algebraic
-    // To geometric
-
-    // Destructor
+    ComplexNum(string& str);
     ~ComplexNum() = default;
+
+    ComplexNum operator + (const ComplexNum&) const;
+    friend ComplexNum operator - (const ComplexNum&, const ComplexNum&);
+    ComplexNum operator * (const ComplexNum&) const;
+    ComplexNum operator / (const ComplexNum&) const;
+
+    explicit operator string() const;
+
+    string toAlgebraic() const;
+    string toTrigonometric() const;
+
+    bool operator == (const ComplexNum& rval) const;
+    bool operator == (const complex<double>& rval) const;
+    bool operator != (const ComplexNum& rval) const;
+    ostream& operator << (ostream& os) const;
 };
 
 
