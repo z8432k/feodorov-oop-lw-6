@@ -1,6 +1,9 @@
 #include <sstream>
 #include "Dim.h"
 #include <iostream>
+#include <utility>
+#include <cmath>
+
 
 Dim::Dim() {
     dim = new float[dimSize];
@@ -71,5 +74,23 @@ float Dim::sum() const {
     }
 
     return sum;
+}
+
+void Dim::reorder() {
+    float *candidate = &dim[0];
+    float *current;
+
+    for (size_t i = 1; i < dimSize; i++) {
+        current = &dim[i];
+
+        if (candidate == current) {
+            continue;
+        }
+
+        if (fabs(*current) <= 1) {
+            swap(*candidate, *current);
+            candidate++;
+        }
+    }
 }
 
