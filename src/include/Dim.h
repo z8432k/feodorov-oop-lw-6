@@ -21,7 +21,7 @@ public:
     explicit operator string() const;
     size_t minAt() const;
     float sum() const;
-    void reorder();
+    Dim* reorder();
 
     static const size_t dimSize {DIM_ARRAY_SIZE};
 };

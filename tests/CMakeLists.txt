@@ -3,15 +3,19 @@ set(CMAKE_INCLUDE_CURRENT_DIR_IN_INTERFACE  ON)
 
 add_compile_options("-Wno-unused-function" "-Wno-unused-variable" "-Wno-unused-function")
 
-list(APPEND _tests
-        test_1)
+link_libraries(dim)
 
-foreach(_test IN LISTS _tests)
-    add_executable(${_test} ${_test}.cc)
+add_executable(test_1 test_1.cc)
+add_test(NAME "Test_constructors" COMMAND $<TARGET_FILE:test_1>)
 
-    target_include_directories(${_test} PRIVATE)
+add_executable(test_2 test_2.cc)
+add_test(NAME "Test_string_operator" COMMAND $<TARGET_FILE:test_2>)
 
-    target_link_libraries(${_test} dim)
+add_executable(test_3 test_3.cc)
+add_test(NAME "Test_min_at" COMMAND $<TARGET_FILE:test_3>)
 
-    add_test(NAME ${_test} COMMAND $<TARGET_FILE:${_test}>)
-endforeach()
+add_executable(test_4 test_4.cc)
+add_test(NAME "Test_sum" COMMAND $<TARGET_FILE:test_4>)
+
+add_executable(test_5 test_5.cc)
+add_test(NAME "Test_reorder" COMMAND $<TARGET_FILE:test_5>)

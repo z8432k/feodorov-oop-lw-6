@@ -6,7 +6,7 @@
 
 
 Dim::Dim() {
-    dim = new float[dimSize];
+    dim = new float[dimSize]();
 }
 
 Dim::~Dim() {
@@ -27,7 +27,11 @@ Dim::operator string() const {
     stringstream out;
 
     for (size_t i = 0; i < dimSize; i++) {
-        out << dim[i] << " ";
+        if (i > 0) {
+            out << " ";
+        }
+
+        out << dim[i];
     }
 
     return out.str();
@@ -37,7 +41,7 @@ size_t Dim::minAt() const {
     size_t pos {0};
     float min {dim[pos]};
 
-    for (size_t i = 1; i < dimSize; i++) {
+    for (size_t i = 0; i < dimSize; i++) {
         if (dim[i] < min) {
             min = dim[i];
             pos = i;
@@ -51,7 +55,7 @@ float Dim::sum() const {
     float sum {0};
     bool loop {false};
 
-    for (size_t i = 1; i < dimSize; i++) {
+    for (size_t i = 0; i < dimSize; i++) {
         if (dim[i] < 0 && !loop) {
             loop = true;
             continue;
@@ -74,7 +78,7 @@ float Dim::sum() const {
     return sum;
 }
 
-void Dim::reorder() {
+Dim* Dim::reorder() {
     float *candidate = &dim[0];
     float *current;
 
@@ -90,5 +94,7 @@ void Dim::reorder() {
             candidate++;
         }
     }
+
+    return this;
 }
 
