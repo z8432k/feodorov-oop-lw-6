@@ -50,12 +50,10 @@ size_t Dim::minAt() const {
 float Dim::sum() const {
     float sum {0};
     bool loop {false};
-    bool flag {false};
 
     for (size_t i = 1; i < dimSize; i++) {
         if (dim[i] < 0 && !loop) {
             loop = true;
-            flag = true;
             continue;
         }
 
