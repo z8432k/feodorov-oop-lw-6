@@ -9,9 +9,17 @@ int main(int argc, char** argv) {
 
     cout << "Lab 5" << endl << endl;
 
-    Dim dim;
+    float init[] = {1, -3, 5, 8, 10};
 
-    cout << dim[0];
+    Dim dim (init, sizeof(init) / sizeof(float));
+
+    cout << dim[0] << endl;
+
+    cout << static_cast<string>(dim) << endl;
+
+    cout << dim.minAt() << endl;
+
+    cout << dim.sum() << endl;
 
     exit(EXIT_SUCCESS);
 }
