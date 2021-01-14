@@ -11,7 +11,7 @@ foreach(_test IN LISTS _tests)
 
     target_include_directories(${_test} PRIVATE)
 
-    target_link_libraries(${_test} composition board)
+    target_link_libraries(${_test} dim)
 
     add_test(NAME ${_test} COMMAND $<TARGET_FILE:${_test}>)
 endforeach()

@@ -1,30 +1,17 @@
 #include <iostream>
 #include <string>
-#include <Composition.h>
 #include <cassert>
+#include <Dim.h>
 
 using namespace std;
 
 int main(int argc, char** argv) {
 
-    cout << "Lab 4" << endl << endl;
+    cout << "Lab 5" << endl << endl;
 
-    Composition composition;
+    Dim dim;
 
-    cout << "Letter A to num: " << Composition::lton('A') << endl;
-    cout << "Num 8 to letter: " << Composition::ntol(8) << endl;
-
-    cout << endl << endl;
-
-    composition.set('a', 2);
-    composition.set('b', 3);
-    composition.set('c', 4);
-
-    cout << static_cast<string>(composition);
-
-    composition.drop('b', 3);
-
-    cout << static_cast<string>(composition);
+    cout << dim[0];
 
     exit(EXIT_SUCCESS);
 }
