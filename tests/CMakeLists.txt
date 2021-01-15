@@ -19,3 +19,6 @@ add_test(NAME "Test_sum" COMMAND $<TARGET_FILE:test_4>)
 
 add_executable(test_5 test_5.cc)
 add_test(NAME "Test_reorder" COMMAND $<TARGET_FILE:test_5>)
+
+add_executable(test_6 test_6.cc)
+add_test(NAME "Test_throwable" COMMAND $<TARGET_FILE:test_6>)

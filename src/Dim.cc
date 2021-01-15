@@ -14,6 +14,10 @@ Dim::~Dim() {
 }
 
 float Dim::operator[](size_t idx) {
+    if (idx >= dimSize) {
+        throw out_of_range("Bang! Index out of range.");
+    }
+
     return dim[idx];
 }
 
