@@ -1,13 +1,13 @@
 #include <string>
 #include <cassert>
-#include <Dim.h>
+#include <TheThing.h>
 #include <stdexcept>
 
 using namespace std;
 
 int main(int argc, char** argv) {
     float init[] {3, -3, 0.5, 8, -0.85};
-    Dim dim (init, sizeof(init) / sizeof(float));
+    TheThing dim (init, sizeof(init) / sizeof(float));
 
     try {
         dim[DIM_ARRAY_SIZE];

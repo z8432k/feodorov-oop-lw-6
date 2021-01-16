@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cassert>
-#include <Dim.h>
+#include <TheThing.h>
 
 using namespace std;
 
@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
 
     float init[] = {3, -3, 0.5, 8, 0.11, 1, -0.85};
 
-    Dim dim (init, sizeof(init) / sizeof(float));
+    TheThing dim (init, sizeof(init) / sizeof(float));
 
     assert(dim.minAt() == 1);
 

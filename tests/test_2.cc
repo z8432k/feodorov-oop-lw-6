@@ -1,20 +1,17 @@
 #include <iostream>
 #include <string>
 #include <cassert>
-#include <Dim.h>
+#include <TheThing.h>
+#include <TheThing.h>
 
 using namespace std;
 
 int main(int argc, char** argv) {
 
-    float init[] = {3, -3, 0.5, 8, 0.11, 1, -0.85};
+    ThingGenerator<short> generator(RANGE_FROM, RANGE_TO);
+    TheThing<short> thing(&generator, 12);
 
-    Dim dim (init, sizeof(init) / sizeof(float));
-
-    string test = "3 -3 0.5 8 0.11 1 -0.85 0 0 0 0 0 0 0";
-    string check = static_cast<string>(dim);
-
-    assert(check == test);
+    thing.reverse();
 
     exit(EXIT_SUCCESS);
 }
