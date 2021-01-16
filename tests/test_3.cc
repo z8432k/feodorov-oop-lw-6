@@ -7,13 +7,16 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-    cout << "Lab 5" << endl << endl;
+    ThingGenerator<short> generator(RANGE_FROM, RANGE_TO);
+    TheThing<short> thing(&generator, 12);
 
-    float init[] = {3, -3, 0.5, 8, 0.11, 1, -0.85};
+    cout << static_cast<string>(thing) << endl;
 
-    TheThing dim (init, sizeof(init) / sizeof(float));
+    thing.forEach([](short x) -> void {
+        cout << (( x < 0 ) ? 0 : x * 2) << "\t";
+    });
 
-    assert(dim.minAt() == 1);
+    cout << endl;
 
     exit(EXIT_SUCCESS);
 }
