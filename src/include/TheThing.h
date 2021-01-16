@@ -31,7 +31,9 @@ public:
 
     ~TheThing() = default;
 
-    T operator [] (size_t idx);
+    T operator[](size_t idx) {
+        return data[idx];
+    }
 
     explicit operator string() const {
         stringstream out;
